@@ -131,6 +131,7 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CompraController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\productoCompraController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ProveedorController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
@@ -262,6 +263,12 @@
     <Content Include="Views\Compra\Edit.cshtml" />
     <Content Include="Views\Compra\listarClientes.cshtml" />
     <Content Include="Views\Compra\listarUsuarios.cshtml" />
+    <Content Include="Views\productoCompra\Index.cshtml" />
+    <Content Include="Views\productoCompra\Create.cshtml" />
+    <Content Include="Views\productoCompra\Details.cshtml" />
+    <Content Include="Views\productoCompra\Edit.cshtml" />
+    <Content Include="Views\productoCompra\listarCompras.cshtml" />
+    <Content Include="Views\productoCompra\listarProductos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
