@@ -5,11 +5,13 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using miPrimerProyecto.Models;
+using System.Web.Security;
 
 namespace miPrimerProyecto.Controllers
 {
     public class UsuarioController : Controller
     {
+        [Authorize]
         // GET: Usuario
         public ActionResult Index()
         {
@@ -149,6 +151,42 @@ namespace miPrimerProyecto.Controllers
                 ModelState.AddModelError("", "error " + ex);
                 return View();
             }
+        }
+
+        public ActionResult Login(string message ="")
+        {
+            ViewBag.Mesaage = message;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string email, string password)
+        {
+            if (!ModelState.IsValid)
+                return View();
+            string passEncrip = UsuarioController.HashSHA1(password);
+            using (var db = new inventario2021Entities())
+            {
+                var userLogin = db.usuario.FirstOrDefault(inventario2021Entities => inventario2021Entities.email == email && inventario2021Entities.password == passEncrip);
+                if(userLogin != null)
+                {
+                    FormsAuthentication.SetAuthCookie(userLogin.email, true);
+                    Session["User"] = userLogin;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return Login("Verifique sus datos");
+                }
+            }
+        }
+
+        [Authorize]
+        public ActionResult closeSesion()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

@@ -24,15 +24,21 @@
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Sobre mi", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
-                    <li>@Html.ActionLink("Cliente", "Index", "Cliente")</li>
-                    <li>@Html.ActionLink("Proveedor", "Index", "Proveedor")</li>
-                    <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
-                    <li>@Html.ActionLink("Usuario Rol", "Index", "Usuario Rol")</li>
-                    <li>@Html.ActionLink("Compra", "Index", "Compra")</li>
-                    <li>@Html.ActionLink("Productos", "Index", "Productos")</li>
-                    <li>@Html.ActionLink("Producto compra", "Index", "producto compra")</li>
-                    <li>@Html.ActionLink("Producto Imagen", "Index", "Producto Imagen")</li>
+                    <li>@Html.ActionLink("Iniciar Sesion", "Login", "Usuario")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
+                        <li>@Html.ActionLink("Cliente", "Index", "Cliente")</li>
+                        <li>@Html.ActionLink("Proveedor", "Index", "Proveedor")</li>
+                        <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
+                        <li>@Html.ActionLink("Usuario Rol", "Index", "Usuario Rol")</li>
+                        <li>@Html.ActionLink("Compra", "Index", "Compra")</li>
+                        <li>@Html.ActionLink("Productos", "Index", "Productos")</li>
+                        <li>@Html.ActionLink("Producto compra", "Index", "producto compra")</li>
+                        <li>@Html.ActionLink("Producto Imagen", "Index", "Producto Imagen")</li>
+                        <li>@Html.ActionLink("Salir", "CloseSesion", "Usuario")</li>
+                    }
+
                 </ul>
             </div>
         </div>
