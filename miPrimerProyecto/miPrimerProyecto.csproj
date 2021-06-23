@@ -283,6 +283,7 @@
     <Content Include="Views\ProductoImagen\Details.cshtml" />
     <Content Include="Views\ProductoImagen\listarProductoImagen.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\Proveedor\UploadCSV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
