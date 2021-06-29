@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using miPrimerProyecto.Models;
+using Rotativa;
 
 namespace miPrimerProyecto.Controllers
 {
@@ -71,6 +72,8 @@ namespace miPrimerProyecto.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(cliente clienteEdit)
         {
+            if (!ModelState.IsValid)
+                return View();
 
             try
             {
@@ -129,6 +132,36 @@ namespace miPrimerProyecto.Controllers
                 ModelState.AddModelError("", "error " + ex);
                 return View();
             }
+        }
+
+        public ActionResult Reporte()
+        {
+            try
+            {
+                var db = new inventario2021Entities();
+                var query = from tabCliente in db.cliente
+                            join tabCompra in db.compra on tabCliente.id equals tabCompra.id_cliente
+                            select new Reporte
+                            {
+                                nombreCliente = tabCliente.nombre,
+                                documentoCliente = tabCliente.documento,
+                                emailCliente = tabCliente.email,
+                                fechaCompra = tabCompra.fecha,
+                                totalCompra = tabCompra.total
+                            };
+
+                return View(query);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "error " + ex);
+                return View();
+            }
+        }
+
+        public ActionResult ImprimirReporte()
+        {
+            return new ActionAsPdf("Reporte") { FileName = "reporte.pdf" };
         }
     }
 }

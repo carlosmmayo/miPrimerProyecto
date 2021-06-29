@@ -20,9 +20,11 @@
                 @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
+                
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre mi", "About", "Home")</li>
+                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { @class = "dropdown-item"})</li>
+                    <li>@Html.ActionLink("Sobre mi", "About", "Home", new { @class = "dropdown-item" })</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Iniciar Sesion", "Login", "Usuario")</li>
                     @if (User.Identity.IsAuthenticated)
