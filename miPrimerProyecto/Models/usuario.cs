@@ -14,6 +14,8 @@ namespace miPrimerProyecto.Models
     
     public partial class usuario
     {
+        internal object id_compra;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public usuario()
         {

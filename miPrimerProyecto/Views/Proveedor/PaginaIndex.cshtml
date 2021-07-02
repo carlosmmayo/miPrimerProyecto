@@ -1,0 +1,28 @@
+﻿@model miPrimerProyecto.Models.ProveedorIndex
+@{
+    ViewBag.Title = "PaginaIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PaginaIndex</h2>
+
+<table classe="table table-striped">
+    <tr>
+        <th>nombre</th>
+        <th>direccion</th>
+        <th>telefono</th>
+        <th>nombre de contacto</th>
+    </tr>
+    @foreach (var proveedor in Model.Proveedor)
+    {
+        <tr>
+            <td>@proveedor.nombre</td>
+            <td>@proveedor.direccion</td>
+            <td>@proveedor.telefono</td>
+            <td>@proveedor.nombre_contacto</td>
+        </tr>
+    }
+
+</table>
+
+@{ Html.RenderPartial("Pagina", Model);}

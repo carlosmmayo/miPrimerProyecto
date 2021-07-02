@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using miPrimerProyecto.Models;
 using System.IO;
+using System.Web.Routing;
 
 namespace miPrimerProyecto.Controllers
 {
@@ -186,6 +187,29 @@ namespace miPrimerProyecto.Controllers
                 }
             }
             return View();
+        }
+
+        public ActionResult PaginaIndex(int pagina = 1)
+        {
+            var cantidadRegistros  = 10;
+            
+            using(var db  = new inventario2021Entities())
+            {
+
+                var proveedor = db.proveedor.OrderBy(x => x.id).Skip((pagina - 1) * cantidadRegistros)
+                    .Take(cantidadRegistros).ToList();
+
+                var totalRegistros = db.proveedor.Count();
+                var modelo = new ProveedorIndex();
+                modelo.Proveedor = proveedor;
+                modelo.ActualPage = pagina;
+                modelo.total = totalRegistros;
+                modelo.recortPage = cantidadRegistros;
+                modelo.ValuesQueryString = new RouteValueDictionary();
+
+                return View(modelo);
+
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using miPrimerProyecto.Models;
+using Rotativa;
 
 namespace miPrimerProyecto.Controllers
 {
@@ -108,6 +109,8 @@ namespace miPrimerProyecto.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(compra compraEdit)
         {
+            if (!ModelState.IsValid)
+                return View();
             try
             {
                 using (var db = new inventario2021Entities())
