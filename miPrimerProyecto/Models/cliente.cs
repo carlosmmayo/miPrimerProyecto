@@ -29,7 +29,7 @@ namespace miPrimerProyecto.Models
         public string nombre { get; set; }
         [Required(ErrorMessage ="El campo Documento no puede ir vacio")]
         public string documento { get; set; }
-        [EmailAddress(ErrorMessage ="El campo email no es correcto")]
+        [EmailAddress]
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -11,7 +11,8 @@ namespace miPrimerProyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class usuario
     {
         internal object id_compra;
@@ -24,10 +25,15 @@ namespace miPrimerProyecto.Models
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "El campo Nombre NO puede ir vacio")]
         public string nombre { get; set; }
+        [Required(ErrorMessage = "El campo Apellido NO puede ir vacio")]
         public string apellido { get; set; }
+        [Required(ErrorMessage = "El campo Fecha NO puede ir vacio")]
         public System.DateTime fecha_nacimiento { get; set; }
+        [EmailAddress]
         public string email { get; set; }
+        [Required]
         public string password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
