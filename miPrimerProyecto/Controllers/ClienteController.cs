@@ -141,14 +141,14 @@ namespace miPrimerProyecto.Controllers
             {
                 var db = new inventario2021Entities();
                 var query = from tabCliente in db.cliente
-                            join tabCompra in db.compra on tabCliente.id equals tabCompra.id_cliente
+                            //join tabCompra in db.compra on tabCliente.id equals tabCompra.id_cliente
                             select new Reporte
                             {
                                 nombreCliente = tabCliente.nombre,
                                 documentoCliente = tabCliente.documento,
                                 emailCliente = tabCliente.email,
-                                fechaCompra = tabCompra.fecha,
-                                totalCompra = tabCompra.total
+                                //fechaCompra = tabCompra.fecha,
+                                //totalCompra = tabCompra.total
                             };
 
                 return View(query);

@@ -9,13 +9,13 @@
 
 <table class="table">
     <tr>
-        <th>Cliente</th>
+        @*<th>Cliente</th>*@
         <th>Nombre Cliente</th>
         <th>Documento Cliente</th>
         <th>Email Cliente</th>
-        <th>Compra</th>
+        @*<th>Compra</th>
         <th>Fecha Compra</th>
-        <th>Total Compra</th>
+        <th>Total Compra</th>*@
     </tr>
     @foreach (var item in Model)
      {
@@ -23,8 +23,8 @@
             <td>@Html.DisplayFor(modelItem => item.nombreCliente)</td>
             <td>@Html.DisplayFor(modelItem => item.documentoCliente)</td>
             <td>@Html.DisplayFor(modelItem => item.emailCliente)</td>
-            <td>@Html.DisplayFor(modelItem => item.fechaCompra)</td>
-            <td>@Html.DisplayFor(modelItem => item.totalCompra)</td>
+            @*<td>@Html.DisplayFor(modelItem => item.fechaCompra)</td>
+            <td>@Html.DisplayFor(modelItem => item.totalCompra)</td>*@
         </tr>
      }
 

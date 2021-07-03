@@ -19,6 +19,10 @@ body {
     color: #ffffff;
 }
 
+.jumbotron .button >li>a {
+    color: #ffffff;
+}
+
 .navbar-inverse {
     background-color: #1e304a;
 }

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using miPrimerProyecto.Models;
 using System.Web.Security;
 
+
 namespace miPrimerProyecto.Controllers
 {
     public class UsuarioController : Controller
