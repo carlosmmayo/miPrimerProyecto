@@ -202,17 +202,17 @@ namespace miPrimerProyecto.Controllers
                 {
                     if (!string.IsNullOrEmpty(row))
                     {
-                        var newProveedor = new proveedor
+                        var newCliente = new cliente
                         {
                             nombre = row.Split(';')[0],
-                            direccion = row.Split(';')[1],
-                            telefono = row.Split(';')[2],
-                            nombre_contacto = row.Split(';')[3],
+                            documento = row.Split(';')[1],
+                            email = row.Split(';')[2],
+                            
                         };
 
                         using (var db = new inventario2021Entities())
                         {
-                            db.proveedor.Add(newProveedor);
+                            db.cliente.Add(newCliente);
                             db.SaveChanges();
                         }
                     }
