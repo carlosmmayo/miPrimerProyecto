@@ -24,12 +24,12 @@ namespace miPrimerProyecto.Models
         }
     
         public int id { get; set; }
-        [Required(ErrorMessage ="El campo Nombre no puede ir vacio")]
+        [Required(ErrorMessage ="El campo Nombre No puede ir vacio")]
         [StringLength(20, ErrorMessage ="supero el limite de 20 caracteres del campo Nombre")]
         public string nombre { get; set; }
-        [Required(ErrorMessage ="El campo Documento no puede ir vacio")]
+        [Required(ErrorMessage ="El campo Documento No puede ir vacio")]
         public string documento { get; set; }
-        [EmailAddress]
+        [Required(ErrorMessage = "El campo Email NO puede ir vacio")]
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

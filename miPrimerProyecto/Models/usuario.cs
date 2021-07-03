@@ -31,7 +31,7 @@ namespace miPrimerProyecto.Models
         public string apellido { get; set; }
         [Required(ErrorMessage = "El campo Fecha NO puede ir vacio")]
         public System.DateTime fecha_nacimiento { get; set; }
-        [EmailAddress]
+        [Required(ErrorMessage = "El campo Email NO puede ir vacio")]
         public string email { get; set; }
         [Required]
         public string password { get; set; }

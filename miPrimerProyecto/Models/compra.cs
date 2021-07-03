@@ -26,9 +26,7 @@ namespace miPrimerProyecto.Models
         public System.DateTime fecha { get; set; }
         [Required(ErrorMessage ="El campo Total NO puede ir vacio")]
         public int total { get; set; }
-        [Required(ErrorMessage ="El campo Usuario No puede ir vacio")]
         public int id_usuario { get; set; }
-        [Required(ErrorMessage ="El campo Cliente NO puede ir vacio")]
         public int id_cliente { get; set; }
     
         public virtual cliente cliente { get; set; }

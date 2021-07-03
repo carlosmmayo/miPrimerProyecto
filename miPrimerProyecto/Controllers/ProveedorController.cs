@@ -192,7 +192,7 @@ namespace miPrimerProyecto.Controllers
 
         public ActionResult PaginaIndex(int pagina = 1)
         {
-            var cantidadRegistros  = 10;
+            var cantidadRegistros  = 3;
             
             using(var db  = new inventario2021Entities())
             {

@@ -1,0 +1,33 @@
+﻿
+
+
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+
+.container .jumbotron, .container-fluid .jumbotron {
+    background-color: #1e304a;
+}
+
+.jumbotron h1, .jumbotron .h1 {
+    color: #ffffff;
+}
+
+.jumbotron p {
+    color: #ffffff;
+}
+
+.navbar-inverse {
+    background-color: #1e304a;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+}
